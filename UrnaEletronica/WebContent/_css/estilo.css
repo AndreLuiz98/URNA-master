@@ -1,0 +1,6 @@
+@CHARSET "ISO-8859-1";
+
+#imagem {max-width: 500px;
+		max-height: 500px;}
+#logo {border: 1px solid black;
+width: 300px; }
