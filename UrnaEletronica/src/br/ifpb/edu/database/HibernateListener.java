@@ -6,11 +6,11 @@ import javax.servlet.ServletContextListener;
 public class HibernateListener implements ServletContextListener{
 	
 	public void contextInitialized(ServletContextEvent event) {
-		JPAUtil.getSessionFactory();
+		HibernateUtil.getSessionFactory();
 	}
 
 	public void contextDestroyed(ServletContextEvent event) {
-		JPAUtil.getSessionFactory().close();
+		HibernateUtil.getSessionFactory().close();
 	}
 	
 

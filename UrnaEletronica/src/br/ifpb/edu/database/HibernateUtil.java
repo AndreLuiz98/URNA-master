@@ -3,7 +3,7 @@ package br.ifpb.edu.database;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class JPAUtil {
+public class HibernateUtil {
 
 	private static final SessionFactory sessionFactory = buildSessionFactory();
 

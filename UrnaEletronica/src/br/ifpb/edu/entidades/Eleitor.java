@@ -9,27 +9,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_eleitor")
-public class Eleitor {
+public class Eleitor extends Pessoa{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_eleitor")
 	private Integer rg;
 	
-	@Column(name = "cpf_eleitor")
-	private String cpf;
-	
-	@Column(name = "nome_eleitor")
-	private String nome;
-	
-	@Column(name = "email_eleitor")
-	private String email;
-	
-	@Column(name = "endereco_eleitor")
-	private String endereco;
-	
-	@Column(name = "telefone_eleitor")
-	private String telefone;
+	@Column(name = "secao_eleitor")
+	private String secao;
 
 	public Integer getRg() {
 		return rg;
@@ -39,44 +27,12 @@ public class Eleitor {
 		this.rg = rg;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getSecao() {
+		return secao;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setSecao(String secao) {
+		this.secao = secao;
 	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
+	
 }
