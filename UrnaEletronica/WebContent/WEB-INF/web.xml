@@ -6,6 +6,11 @@
     <welcome-file>index.xhtml</welcome-file>
   </welcome-file-list>
   
+    <listener>
+		<listener-class>
+    		br.edu.ifpb.database.HibernateListener
+		</listener-class>
+	</listener>
   <!-- JSF -->
 	<servlet>
 	    <servlet-name>Faces Servlet</servlet-name>
