@@ -1,16 +1,22 @@
 package br.ifpb.edu.entidades;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_pessoa")
 @NamedQuery(name = "Pessoa.getAll", query = "from Pessoa")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "tp_pessoa", discriminatorType = DiscriminatorType.INTEGER)
 public class Pessoa {
 
 	@Id
@@ -29,6 +35,9 @@ public class Pessoa {
 
 	@Column(name = "tituloVot_pessoa")
 	private String tituloVotacao;
+	
+	@Column(name = "tp_pessoa", insertable = false, updatable = false)
+    private String tipo;
 
 	public Integer getIdentidade() {
 		return identidade;
@@ -70,6 +79,12 @@ public class Pessoa {
 		this.tituloVotacao = tituloVotacao;
 	}
 	
-	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 }

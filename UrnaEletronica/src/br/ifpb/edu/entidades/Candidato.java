@@ -1,6 +1,7 @@
 package br.ifpb.edu.entidades;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +11,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_candidato")
+@DiscriminatorValue(value = "2")
+@NamedQuery(name = "Candidato.getAll", query = "from Candidato")
 public class Candidato extends Pessoa{
 	
 	@Id

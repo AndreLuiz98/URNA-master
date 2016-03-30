@@ -139,7 +139,6 @@ public abstract class GenericDAO<PK, T> {
 	}
 
 	public abstract T find(T entity) throws HibernateException;
-	
 
 	public abstract List<T> getAll() throws HibernateException;
 

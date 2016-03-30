@@ -6,26 +6,18 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import br.ifpb.edu.database.HibernateUtil;
-import br.ifpb.edu.entidades.Pessoa;
+import br.ifpb.edu.entidades.Voto;
 
-public class PessoaDAO extends GenericDAO<Integer, Pessoa>{
-
-	private static PessoaDAO instance;
-
-	public static PessoaDAO getInstance() {	
-
-		instance = new PessoaDAO();		
-		return instance;
-	}
+public class VotoDAO extends GenericDAO<Integer, Voto>{
 
 	@Override
-	public Pessoa find(Pessoa entity) throws HibernateException {
+	public Voto find(Voto entity) throws HibernateException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Pessoa> getAll() throws HibernateException {
+	public List<Voto> getAll() throws HibernateException {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -35,15 +27,16 @@ public class PessoaDAO extends GenericDAO<Integer, Pessoa>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	public Pessoa getById(Integer pk) {
+	
+	public Voto getById(Integer pk) {
 
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Pessoa pessoa = null;
+		Voto voto = null;
 
 		try {
+			
 			session.beginTransaction();
-			pessoa = (Pessoa) session.get(Pessoa.class, pk);
+			voto = (Voto) session.get(Voto.class, pk);
 			session.getTransaction().commit();
 
 		} catch (HibernateException hexp) {
@@ -55,6 +48,7 @@ public class PessoaDAO extends GenericDAO<Integer, Pessoa>{
 
 		}
 
-		return pessoa;
+		return voto;
 	}
+
 }
